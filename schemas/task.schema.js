@@ -2,7 +2,11 @@ import { z } from "zod";
 
 const taskSchema = z.object(
     {
-        "titulo": z.string().min(20).required(),   
+        //hacer que titulo sea obligatorio y un minimo de 20 caracteres
+        "titulo": z.string().trim().min(20),
+        "descripcion": z.string(),
+        "completada": z.boolean(),
+        "fecha_creacion": z.string()       
     }
 )
 
