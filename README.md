@@ -5,9 +5,9 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 - **npm** 
 
  Verificar si tienes Node.js y npm instalados ejecutando estos comandos:
-
-node -v
-npm -v
+```bash
+    node -v
+    npm -v
 
 Instalación:
 1. Clonar el repositorio
@@ -24,15 +24,15 @@ Instalación:
 
 
 El servidor se iniciará y estará disponible en:
-    *http://localhost:2000
-
+    *http://localhost:2000/tareas
 Ejemplos de cuerpo de las peticiones put, post
 {
     "titulo": "segunda tarea de la lista",
     "descripcion": "Descripción de la tarea 2",
     "completada": true,
     "fecha_creacion": "2025-10-10"
-}
+}\n
+
 {
     "titulo": "Desarrollar productos nuevos"
     ,"descripcion": "Descripción de la tarea"
