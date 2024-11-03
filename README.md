@@ -5,7 +5,6 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 - **npm** 
 
  Verificar si tienes Node.js y npm instalados ejecutando estos comandos:
-    ```bash
         node -v
         npm -v
 
