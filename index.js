@@ -1,11 +1,12 @@
 import express, { json } from 'express'
 import tasks from './stores/tasks.json' with  {type: 'json'}
 import {validateTaskSchema, validatePartialTaskSchema} from './schemas/task.schema.js'
-// import cors from 'cors'
+
 
 const app = express()
 const PORT = process.env.PORT || 2000
 
+app.use(json())
 
 app.disable('x-powered-by')
 //*rutas
@@ -53,18 +54,7 @@ app.post('/tareas', (req,res)=>{
 app.put('/tareas/:id', (req,res)=>{
     const {id} = req.params
 
-    const {success, error} = validateTaskSchema(req.body)
-    if(!success){
-        res
-            .status(400)
-            .json({"error": true, "message": error.message})
-            return
-    }
-})
-
-app.delete('/tareas/:id',(req,res)=>{
-    const {id} = req.params
-
+   
     if(id === undefined){
         res
             .status(401)
@@ -72,12 +62,32 @@ app.delete('/tareas/:id',(req,res)=>{
         return
     }
 
+    const {success, error} = validateTaskSchema(req.body)
+    if(!success){
+        res
+            .status(400)
+            .json({"error": true, "message": error.message})
+            return
+    }
+
     const taskIndex = tasks.findIndex( task => task.id == id )
 
-    task = taks[taskIndex]
+    tasks[taskIndex] = {...tasks[taskIndex], ...req.body}
+
     res
         .status(200)
-        .json(task)
+        .json(tasks[taskIndex])
+})
+
+app.delete('/tareas/:id',(req,res)=>{
+    const {id} = req.params
+
+    if (id ==undefined)
+        res.json({message: 'No se encontro la tarea'})
+    
+    const taskIndex = tasks.findIndex(task => task.id ===id)
+    tasks.splice(taskIndex,1)
+    res.json({message: 'Tarea eliminada'})
 })
 app.listen(PORT,()=>{
     console.log('Server running on port ' + PORT)

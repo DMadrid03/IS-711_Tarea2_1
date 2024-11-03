@@ -1,9 +1,9 @@
 [    
     {
         "id": 1,
-        "title": "Tarea 1",
+        "titulo": "Tarea 1",
         "descripcion": "Descripción de la tarea 1",
-        "completeda": false,
+        "completada": false,
         "fecha_creacion": "2023-08-19T00:00:00.000Z"
     }
 ]
