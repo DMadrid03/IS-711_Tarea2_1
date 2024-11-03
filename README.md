@@ -5,7 +5,7 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 - **npm** 
 
  Verificar si tienes Node.js y npm instalados ejecutando estos comandos:
-```bash
+    ```bash
     node -v
     npm -v
 
@@ -31,7 +31,7 @@ Ejemplos de cuerpo de las peticiones put, post
     "descripcion": "Descripción de la tarea 2",
     "completada": true,
     "fecha_creacion": "2025-10-10"
-}\n
+}
 
 {
     "titulo": "Desarrollar productos nuevos"
