@@ -24,7 +24,8 @@ Instalación:
 
 El servidor se iniciará y estará disponible en:
     *http://localhost:2000/tareas
-Ejemplos de cuerpo de las peticiones put, post
+
+**Ejemplos de cuerpo de las peticiones put, post**
 {
     "titulo": "segunda tarea de la lista",
     "descripcion": "Descripción de la tarea 2",
