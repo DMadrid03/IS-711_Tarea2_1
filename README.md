@@ -6,8 +6,8 @@ Antes de comenzar, asegúrate de tener lo siguiente instalado en tu sistema:
 
  Verificar si tienes Node.js y npm instalados ejecutando estos comandos:
     ```bash
-    node -v
-    npm -v
+        node -v
+        npm -v
 
 Instalación:
 1. Clonar el repositorio
